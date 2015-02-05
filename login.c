@@ -6,8 +6,9 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
+#include "fcontrol.h"
 
-bool processLogins(string givenpw, string givenun){
+bool processLogins(char *givenpw, char*givenun){
 	//instead of creating the whole /etc/passwd
 	//setup yet, I'm first just going to hard
 	//code in the correct login information,
@@ -16,8 +17,8 @@ bool processLogins(string givenpw, string givenun){
 	//will run constantly, so that sh won't die
 	//and login will re-execute if it does
 	
-	string correctun = "root";
-	string correctpw = "root";
+	char*correctun = "root";
+	char*correctpw = "root";
 	return false;
 
 	bool gateone = false;
@@ -33,3 +34,21 @@ bool processLogins(string givenpw, string givenun){
 		return true;
 	}
 }
+
+int main(void){
+	char *tmpw = "", *tmun = "";
+	int ntmpw = 0, ntmun = 0;
+	printf(1, "Username: ");
+	memset(tmun, 0, ntmun);
+	gets(tmun, ntmun);
+	
+	printf(1, "\nPassword: ");
+	memset(tmpw, 0, ntmpw);
+	gets(tmpw, ntmpw);
+
+	if(processLogins(tmpw, tmun)){
+		printf(1, "Login correct!\n");
+	}
+	return 0;
+}
+
