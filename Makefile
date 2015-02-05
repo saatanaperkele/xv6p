@@ -175,6 +175,7 @@ UPROGS=\
 	_fortune\
 	_shutdown\
 	_wc\
+	_login\
 	_zombie\
 	_ps\
 

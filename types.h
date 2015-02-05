@@ -15,6 +15,12 @@ typedef char string[];
 #define ptrdiff_t uint32_t
 #define size_t	uint32_t
 #define ssize_t	int32_t
+
+//c99 baby
+typedef int bool;
+#define true 1
+#define false 0
+
 /*
 typedef int32_t int_fast16_t;
 typedef int32_t int_fast32_t;
