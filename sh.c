@@ -79,9 +79,8 @@ runcmd(struct cmd *cmd)
 //    strcpy(pathwarg, "/");
     strcat(pathwarg, ecmd->argv[0]);
 //    char *holdOver[] = {ecmd->argv[0], 0};
-    
-    if(exec(pathwarg, ecmd->argv ) == 0){
-	break;}
+    if(!exec(pathwarg, ecmd->argv ) == 0){
+	printf(2, "exec %s failed\n", ecmd->argv[0]);}
     exec(ecmd->argv[0], ecmd->argv);
     printf(2, "exec %s failed\n", ecmd->argv[0]);
     break;
