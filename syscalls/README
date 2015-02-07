@@ -1,0 +1,10 @@
+All new system calls (outside of those previously added manually)
+will be added in their own c files and documented here. In the future
+I intend to mix the XNU and Linux methods of system call declaration
+into this setup so that not everything has to be explicitly declared here
+and can be written into different files around the source tree as need be
+	(although I find this to be highly idiotic, but it will allow for
+		easier porting of Linux programs and wrapping of system
+		calls to make my life easier when troubleshooting and 
+		debugging incompatable binaries)
+
