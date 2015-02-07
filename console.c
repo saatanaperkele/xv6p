@@ -110,7 +110,7 @@ panic(char *s)
   
   cli();
   cons.locking = 0;
-  cprintf("cpu%d: panic: ", cpu->id);
+  cprintf("[xv6] cpu%d: panic in proc %s (pid: %d)\n     cause:", cpu->id, cpu->proc->name, cpu->proc->pid);
   cprintf(s);
   cprintf("\n");
   getcallerpcs(&s, pcs);
