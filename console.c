@@ -116,6 +116,7 @@ panic(char *s)
   getcallerpcs(&s, pcs);
   for(i=0; i<10; i++)
     cprintf(" %p", pcs[i]);
+  cprintf("\nSystem halted. Please restart");
   panicked = 1; // freeze other CPU
   for(;;)
     ;
