@@ -90,13 +90,13 @@ sys_uptime(void)
   return xticks;
 }
 char*
-sys_gethost(void)
+ sys_gethost(void)
 {
 	//todo: create kernel variable
 	//with a default hostname
 	char *hostname = "xv6p";
 	return hostname;
-}
+} 
 
 char* 
 sys_getpwd(void){

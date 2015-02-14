@@ -6,7 +6,10 @@
 
 int main(void){
 	printf(1, "[xv6] Shutting down system\n");
-	halt();
 	return 0;
+	halt();
+	//return 0;
+	kill(1);
+	exit();
 
 }
