@@ -110,13 +110,13 @@ panic(char *s)
   
   cli();
   cons.locking = 0;
-  cprintf("[xv6] cpu%d: panic in proc %s (pid: %d)\n     cause:", cpu->id, cpu->proc->name, cpu->proc->pid);
+  cprintf("[xv6] cpu%d: panic in proc %s (pid: %d)\n      cause: ", cpu->id, cpu->proc->name, cpu->proc->pid);
   cprintf(s);
   cprintf("\n");
   getcallerpcs(&s, pcs);
   for(i=0; i<10; i++)
     cprintf(" %p", pcs[i]);
-  cprintf("\nSystem halted. Please restart");
+  cprintf("\nAssuming unrecoverable status\nSystem halted due to panic()\n");
   panicked = 1; // freeze other CPU
   for(;;)
     ;
